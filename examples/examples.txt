@@ -1,0 +1,1 @@
+Exemples d'utilisation de la librairie SDK dans différents scénarios, démontrant comment intégrer les fonctionnalités dans des applications Python.

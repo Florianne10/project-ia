@@ -1,0 +1,1 @@
+# Interface en ligne de commande pour interagir avec la librairie SDK. Les utilisateurs peuvent saisir des informations pour générer du texte et des images

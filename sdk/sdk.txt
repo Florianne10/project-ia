@@ -1,0 +1,2 @@
+Répertoire contenant le code source de la librairie SDK en Python.
+Organisez le code de manière modulaire pour faciliter son utilisation par d'autres développeurs.

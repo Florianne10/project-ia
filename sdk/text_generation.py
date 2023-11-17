@@ -1,0 +1,1 @@
+# Module pour la génération de texte en utilisant les modèles disponibles

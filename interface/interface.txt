@@ -1,0 +1,2 @@
+Répertoire contenant le code source de l'interface en Python.
+Cette interface peut être utilisée pour interagir avec la librairie SDK de manière conviviale.
