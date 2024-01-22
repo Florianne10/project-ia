@@ -1,9 +1,9 @@
 import asyncio
 from llama_cpp import Llama
 
-MODEL = Llama(model_path="./llama-2-7b-chat.Q4_K_M.gguf", verbose=False)
 
 class Llama2:
+    MODEL = Llama(model_path="./llama-2-7b-chat.Q4_K_M.gguf", verbose=False)
     # model = None
     def __init__(self, prompt: str, max_tokens: int = 1000) -> None:
         self.prompt = prompt
@@ -23,7 +23,7 @@ class Llama2:
         return self.response is not None
 
     def generate_response(self):
-        self.response = MODEL(self.prompt, max_tokens=self.max_tokens,)
+        self.response = Llama2.MODEL(self.prompt, max_tokens=self.max_tokens,)
         print(self.response)
         print(type(self.response))
 
@@ -32,3 +32,7 @@ class Llama2:
             return ""
 
         return self.response["choices"][0]["text"]
+    
+    @staticmethod
+    def close_model():
+        del Llama2.MODEL

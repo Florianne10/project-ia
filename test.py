@@ -32,6 +32,7 @@ print("Generation done")
 
 print(stableDiffusionPrompt.get_response())
 
+Llama2.close_model()
 
 async def generation():
     prompt = StableDiffusion(stableDiffusionPrompt.get_response(), quality=20)#, loras={"Tintin": 1, "Tintin_v1": 1})
@@ -58,3 +59,4 @@ try:
     asyncio.run(generation())
 except Exception as e:
     pass
+
