@@ -1,21 +1,31 @@
 import asyncio
 from llama_cpp import Llama
 
-class Llama2Generator:
-    def __init__(self, model_path: str, prompt: str, max_tokens: int = 100) -> None:
-        self.model = Llama(model_path=model_path, verbose=False)
+MODEL = Llama(model_path="./llama-2-7b-chat.Q4_K_M.gguf", verbose=False)
+
+class Llama2:
+    # model = None
+    def __init__(self, prompt: str, max_tokens: int = 1000) -> None:
         self.prompt = prompt
         self.max_tokens = max_tokens
 
         self.response = None
 
-        asyncio.create_task(self.generate_response())
+        # asyncio.create_task(self.generate_response())
+        self.generate_response()
+
+    # @staticmethod
+    # def set_model(modelPath):
+    #     Llama2.model = Llama(model_path=modelPath, verbose=False)
+
 
     def generation_done(self) -> bool:
         return self.response is not None
 
-    async def generate_response(self):
-        self.response = self.model(self.prompt, max_tokens=self.max_tokens)
+    def generate_response(self):
+        self.response = MODEL(self.prompt, max_tokens=self.max_tokens,)
+        print(self.response)
+        print(type(self.response))
 
     def get_response(self) -> str:
         if not self.response:

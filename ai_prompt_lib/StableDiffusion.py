@@ -11,7 +11,7 @@ port = 5555
 LOCAL_STABLE_DIFFUSION_URL = "http://127.0.0.1:" + str(port)
 
 class StableDiffusion:
-    def __init__(self, prompt:str, quality : int = 20, loras : dict[str, float] = []) -> None:
+    def __init__(self, prompt:str, quality : int = 20, loras : dict[str, float] = {}) -> None:
         loras_str = "".join(map(lambda x: f'<lora:{x[0]}:{x[1]}>', loras.items()))
 
         self.prompt = prompt + loras_str
