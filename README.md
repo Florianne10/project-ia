@@ -1,9 +1,10 @@
 # Projet IA
-Ce projet vise à créer un framework sur Github réutilisable par d'autres développeurs, pour utiliser Stable diffusions, Automatic 1111 et Llama2 afin de les utiliser pour générer un titre, une image et une histoire en fonction d'un prompt.
+Ce projet vise à créer un framework sur Github réutilisable par d'autres développeurs, pour utiliser Stable diffusions et Llama2 afin de les utiliser pour générer un titre, une image et une histoire en fonction d'un prompt.
 Nous devions créer une API pour qu'un développeur puisse l'intégrer dans son application.
-Nous avons créé une interface python qu'on peut exploiter.
+Nous avons créé une librairie python qu'on peut exploiter.
 
-Ce projet vise à mettre en œuvre des techniques d'intelligence artificielle pour atteindre un objectif spécifique. Ce fichier README vous guidera à travers les étapes nécessaires pour la configuration, l'installation et l'utilisation du projet.
+> ATTENTION : Ce projet ne fonctionne que sur Windows
+
 
 ## Prérequis
 
@@ -14,16 +15,14 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 - **Windows:**
   Vous pouvez installer Python sur Windows en suivant les instructions fournies [ici](https://kinsta.com/fr/base-de-connaissances/installer-python/#windows-1).
 
-- **Linux:**
-  Pour installer Python sur Linux, vous pouvez suivre les instructions disponibles [ici](https://docs.aws.amazon.com/fr_fr/elasticbeanstalk/latest/dg/eb-cli3-install-linux.html).
+- Autre prochainement
 
 ### Git
 
 - **Windows:**
   Vous pouvez installer Git pour Windows en suivant les instructions disponibles [ici](https://gitforwindows.org/).
 
-- **Linux:**
-  Suivez les instructions [ici](https://github.com/git-guides/install-git#install-git-on-linux) pour installer Git sur Linux.
+- Autre prochainement
 
 ### Anti-virus
 
@@ -33,32 +32,12 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 
 ### Visual Studio C++
 
-- Installez Visual Studio avec le développement Desktop et C++. Vous pouvez télécharger Visual Studio [ici](https://visualstudio.microsoft.com/fr/vs/community/).
+- Installez Visual Studio avec le "Desktop development with C++". Vous pouvez télécharger Visual Studio [ici](https://visualstudio.microsoft.com/fr/vs/community/).
 
-ou
-
-- Installez Visual Studio avec la charge de travail "Desktop development with C++".
 
 ## Installation
 
 Suivez les étapes ci-dessous pour installer le projet:
-
-### Model
-
-1. Téléchargez le modèle de votre choix des IA à partir de [HuggingFace](https://huggingface.co).
-
-**Llama2**
-[llama-2-7b-chat.Q4_K_M](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/blob/main/llama-2-7b-chat.Q4_K_M.gguf)
-[Liste Llama2](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF)
-
-**Mistral**
-[Mistral-7B-v0.1](https://huggingface.co/TheBloke/Mistral-7B-v0.1-GGUF/blob/main/mistral-7b-v0.1.Q4_K_M.gguf)
-[Liste Mistral](https://huggingface.co/TheBloke/Mistral-7B-v0.1-GGUF)
-
-
-
-
-2. Extrayez le contenu du modèle dans le répertoire du projet.
 
 ### Instructions
 
@@ -73,11 +52,38 @@ Suivez les étapes ci-dessous pour installer le projet:
    ```
 
 3. Exécutez le script d'installation:
+```
+  .\install.cmd
+```
+4. Télécharger les modèles et les loras.
+cf voir partie Model
+
+### Model
+
+1. Téléchargez le modèle de votre choix des IA à partir de [HuggingFace](https://huggingface.co).
+
+**Llama2**
+[llama-2-7b-chat.Q4_K_M](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/blob/main/llama-2-7b-chat.Q4_K_M.gguf)
+[Liste Llama2](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF)
+
+
+2. Extrayez le contenu du modèle dans le répertoire du projet.
 
 
 ## Lancement
 
 Pour lancer le projet, utilisez la commande suivante:
+
+1. Placez-vous à la racine du dépôt.
+2. Effectuez les commandes suivantes, une par une:
+  ```
+  cmd.exe
+  %cd%\Miniconda3\Scripts\activate.bat
+  conda activate ia-env
+  cd stable-diffusion-webui
+  .\webui.bat --api --no-half-vae --no-half --port=5555
+  ```
+
 
 
 ## Exemple d'utilisation
