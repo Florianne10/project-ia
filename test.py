@@ -23,7 +23,7 @@ print(promptStory.get_response())
 
 print("\n////Generation stable diffusion prompt...")
 
-stableDiffusionPrompt = Llama2("Writte a short prompt to illustrate this story with a picture generation IA. Describe details ofthe story characters: " + promptStory.get_response() + "\n\nPrompt: ")
+stableDiffusionPrompt = Llama2("Write a short prompt to illustrate this story with a picture generation IA. Describe details of the story characters: " + promptStory.get_response() + "\n\nPrompt: ")
 # stableDiffusionPrompt = Llama2("Describe in details characters & landspace of this story: " + promptStory.get_response() + "\n\nPrompt: ")
 
 

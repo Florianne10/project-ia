@@ -41,13 +41,11 @@ Suivez les étapes ci-dessous pour installer le projet:
 ### Instructions
 
 1. Clonez ce dépôt en utilisant la commande:
-
    ```bash
    git clone https://github.com/nom-utilisateur/projet-ia.git
    ```
 
 2. Naviguez vers le répertoire du projet:
-
    ```bash
    cd projet-ia
    ```
@@ -80,7 +78,7 @@ Pour lancer le projet, utilisez la commande suivante:
 
 ```
 cmd.exe
-%cd%\Miniconda3\Scripts\activate.bat
+%UserProfile%\Miniconda3\Scripts\activate.bat
 conda activate ia-env
 cd stable-diffusion-webui
 .\webui.bat --api --no-half-vae --no-half --port=5555
