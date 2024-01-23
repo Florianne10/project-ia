@@ -13,6 +13,8 @@ call conda activate ia-env
 cd stable-diffusion-webui
 call .\webui.bat --api --no-half-vae --no-half --nowebui --exit
 
+cd ..
+
 python -m venv .venv
 
 exit
