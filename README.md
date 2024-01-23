@@ -78,7 +78,7 @@ Pour lancer le projet, utilisez la commande suivante:
 
 ```
 cmd.exe
-%cd%\Miniconda3\Scripts\activate.bat
+%UserProfile%\Miniconda3\Scripts\activate.bat
 conda activate ia-env
 cd stable-diffusion-webui
 .\webui.bat --api --no-half-vae --no-half --port=5555
