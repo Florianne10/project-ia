@@ -13,6 +13,14 @@ LOCAL_STABLE_DIFFUSION_URL = "http://127.0.0.1:" + str(port)
 class StableDiffusion:
     """!A class for generating responses from StableDiffusion."""
     def __init__(self, prompt:str, quality : int = 20, loras : dict[str, float] = {}) -> None:
+        """The constructor for StableDiffusion class.
+        Parameters:
+            prompt (str): The prompt to generate a response from.
+            quality (int): The quality of the generation.
+            loras (dict[str, float]): The loras to use.
+        Returns:
+            None
+        """
         loras_str = "".join(map(lambda x: f'<lora:{x[0]}:{x[1]}>', loras.items()))
 
         self.prompt = prompt + loras_str
@@ -38,7 +46,9 @@ class StableDiffusion:
         
 
     def generation_done(self) -> bool:
-        """Check if the generation is done."""
+        """Check if the generation is done.
+        Returns:
+            bool: True if the generation is done, False otherwise."""
         return self.json_response != None
 
     async def generate_image(self):
@@ -61,7 +71,9 @@ class StableDiffusion:
             self.json_response = await response.json()
 
     def get_image(self) -> Image:
-        """Return the generated response."""
+        """Return the generated response.
+        Returns:
+            Image: The generated response."""
         if not self.image:
             self.image = Image.open(io.BytesIO(base64.b64decode(self.json_response['images'][0])))
 

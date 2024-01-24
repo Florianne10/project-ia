@@ -28,17 +28,22 @@ class Llama2:
 
 
     def generation_done(self) -> bool:
-        """Check if the generation is done."""
+        """Check if the generation is done.
+        Returns:
+            bool: True if the generation is done, False otherwise."""
         return self.response is not None
 
     def generate_response(self):
-        """Generate a response from the model."""
+        """Generate a response from the model.
+        """
         self.response = Llama2.MODEL(self.prompt, max_tokens=self.max_tokens,)
         print(self.response)
         print(type(self.response))
 
     def get_response(self) -> str:
-        """Return the generated response."""
+        """Return the generated response.
+        Returns:
+            str: The generated response."""
         if not self.response:
             return ""
 
@@ -46,6 +51,10 @@ class Llama2:
     
     @staticmethod
     def load_model(modelPath):
+        """Load the model.
+        Parameters:
+            modelPath (str): The path to the model.
+        """
         Llama2.close_model()
         Llama2.MODEL = Llama(model_path=modelPath, verbose=False)
 
