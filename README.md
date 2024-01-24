@@ -41,25 +41,31 @@ Suivez les étapes ci-dessous pour installer le projet:
 ### Instructions
 
 1. Clonez ce dépôt en utilisant la commande:
+
    ```bash
    git clone https://github.com/nom-utilisateur/projet-ia.git
    ```
 
 2. Naviguez vers le répertoire du projet:
+
    ```bash
    cd projet-ia
    ```
 
 3. Exécutez le script d'installation:
 
-```
-  .\install.cmd
-```
+   ```
+     .\install.cmd
+   ```
 
 4. Télécharger les modèles et les loras.
    cf voir partie Model
 
 ### Model
+
+#### STABLE DIFFUSION
+
+#### LLAMA 2
 
 1. Téléchargez le modèle de votre choix des IA à partir de [HuggingFace](https://huggingface.co).
 
@@ -73,16 +79,29 @@ Suivez les étapes ci-dessous pour installer le projet:
 
 Pour lancer le projet, utilisez la commande suivante:
 
-1. Placez-vous à la racine du dépôt.
-2. Effectuez les commandes suivantes, une par une:
+1. Lancer le serveur stable diffusion
 
-```
-cmd.exe
-%UserProfile%\Miniconda3\Scripts\activate.bat
-conda activate ia-env
-cd stable-diffusion-webui
-.\webui.bat --api --no-half-vae --no-half --port=5555
-```
+   Allez à la racine du dépot dans un terminal et lancez les commandes suivantes:
+
+   ```shell
+   cmd.exe
+   %UserProfile%\Miniconda3LLMFF\Scripts\activate.bat
+   conda activate ia-env
+   cd stable-diffusion-webui
+   .\webui.bat --api --no-half-vae --no-half --nowebui --port=5555
+   ```
+
+   > Vous gardez ce terminal ouvert durant toute l'utilisation du projet
+
+2. Lancer un script d'un projet qui utilise ai_prompt_lib
+   Ouvrez powershell et lancez les commandes suivantes (depuis la racine du dépot):
+
+   ```shell
+   .venv/Scripts/activate.bat
+   python test.py
+   ```
+
+   > Si vous souhaitez lancer votre propre script ils suffit de remplacer `test.py` par le nom de votre script
 
 ## Exemple d'utilisation
 
