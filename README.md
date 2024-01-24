@@ -63,6 +63,10 @@ Suivez les étapes ci-dessous pour installer le projet:
 
 ### Model
 
+#### STABLE DIFFUSION
+
+#### LLAMA 2
+
 1. Téléchargez le modèle de votre choix des IA à partir de [HuggingFace](https://huggingface.co).
 
 **Llama2**
@@ -80,10 +84,10 @@ Pour lancer le projet, utilisez la commande suivante:
 
 ```
 cmd.exe
-%cd%\Miniconda3\Scripts\activate.bat
+ %UserProfile%\Miniconda3\Scripts\activate.bat
 conda activate ia-env
 cd stable-diffusion-webui
-.\webui.bat --api --no-half-vae --no-half --port=5555
+.\webui.bat --api --no-half-vae --no-half --nowebui --port=5555
 ```
 
 ## Exemple d'utilisation
