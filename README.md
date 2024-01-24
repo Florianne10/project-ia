@@ -43,7 +43,7 @@ Suivez les étapes ci-dessous pour installer le projet:
 1. Clonez ce dépôt en utilisant la commande:
 
    ```bash
-   git clone https://github.com/nom-utilisateur/projet-ia.git
+   git clone https://github.com/Florianne10/project-ia.git
    ```
 
 2. Naviguez vers le répertoire du projet:
