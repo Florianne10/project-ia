@@ -142,13 +142,11 @@ Pour lancer le projet, utilisez la commande suivante:
 
 Voici un exemple d'utilisation basique du projet:
 
-## Dépendances nécessaires
-
-Le projet dépend des bibliothèques suivantes:
-
-### Llama 2
-
-### Stable Diffusion
+## Documentation
+Pour générer la documentation:
+```
+doxygen Doxyfile
+```
 
 ## Auteurs
 

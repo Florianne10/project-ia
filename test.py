@@ -39,6 +39,7 @@ with open("output.txt", "w") as text_file:
 Llama2.close_model()
 
 async def generation():
+    """!Generate a response from the model."""
     prompt = StableDiffusion(stableDiffusionPrompt.get_response(), quality=20)#, loras={"Tintin": 1, "Tintin_v1": 1})
     
     print("Generating picture...")
