@@ -45,6 +45,11 @@ class Llama2:
         return self.response["choices"][0]["text"]
     
     @staticmethod
+    def load_model(modelPath):
+        Llama2.close_model()
+        Llama2.MODEL = Llama(model_path=modelPath, verbose=False)
+
+    @staticmethod
     def close_model():
         """Close the model."""
         del Llama2.MODEL

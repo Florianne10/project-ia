@@ -30,7 +30,11 @@ stableDiffusionPrompt = Llama2("Write a short prompt to illustrate this story wi
 
 print("Generation done")
 
-print(stableDiffusionPrompt.get_response())
+story = "______Story______\n"  + promptStory.prompt + "\n" + promptStory.get_response()
+
+# Save story
+with open("output.txt", "w") as text_file:
+    text_file.write(story)
 
 Llama2.close_model()
 
@@ -54,7 +58,7 @@ async def generation():
 
     print("Done")
 
-    print("______Story______\n"  + promptStory.prompt + "\n" + promptStory.get_response())
+    print()
 
 try:
     asyncio.run(generation())
