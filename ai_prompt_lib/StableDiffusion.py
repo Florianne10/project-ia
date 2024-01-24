@@ -5,12 +5,13 @@ from PIL import Image
 import asyncio
 import aiohttp
 
-
+"""Global variables for StableDiffusion."""
 port = 5555
 
 LOCAL_STABLE_DIFFUSION_URL = "http://127.0.0.1:" + str(port)
 
 class StableDiffusion:
+    """!A class for generating responses from StableDiffusion."""
     def __init__(self, prompt:str, quality : int = 20, loras : dict[str, float] = {}) -> None:
         loras_str = "".join(map(lambda x: f'<lora:{x[0]}:{x[1]}>', loras.items()))
 
@@ -28,6 +29,7 @@ class StableDiffusion:
 
     @staticmethod
     def server_is_running():
+        """Check if the server is running."""
         try:
             response = requests.get(url=f'{LOCAL_STABLE_DIFFUSION_URL}/sdapi/v1/progress')
             return True
@@ -36,9 +38,11 @@ class StableDiffusion:
         
 
     def generation_done(self) -> bool:
+        """Check if the generation is done."""
         return self.json_response != None
 
     async def generate_image(self):
+        """Generate a response from the model."""
         assert(not self.started, "Already generating")
         self.started = True
 
@@ -57,12 +61,14 @@ class StableDiffusion:
             self.json_response = await response.json()
 
     def get_image(self) -> Image:
+        """Return the generated response."""
         if not self.image:
             self.image = Image.open(io.BytesIO(base64.b64decode(self.json_response['images'][0])))
 
         return self.image
     
     async def get_progress(self):
+        """Return the progress of the generation."""
         try:
             async with aiohttp.ClientSession() as session:
                 response = await session.get(url=f'{LOCAL_STABLE_DIFFUSION_URL}/sdapi/v1/progress')
