@@ -54,9 +54,9 @@ Suivez les étapes ci-dessous pour installer le projet:
 
 3. Exécutez le script d'installation:
 
-```
-  .\install.cmd
-```
+   ```
+     .\install.cmd
+   ```
 
 4. Télécharger les modèles et les loras.
    cf voir partie Model
@@ -81,27 +81,27 @@ Pour lancer le projet, utilisez la commande suivante:
 
 1. Lancer le serveur stable diffusion
 
-Allez à la racine du dépot dans un terminal et lancez les commandes suivantes:
+   Allez à la racine du dépot dans un terminal et lancez les commandes suivantes:
 
-```shell
-cmd.exe
-%UserProfile%\Miniconda3LLMFF\Scripts\activate.bat
-conda activate ia-env
-cd stable-diffusion-webui
-.\webui.bat --api --no-half-vae --no-half --nowebui --port=5555
-```
+   ```shell
+   cmd.exe
+   %UserProfile%\Miniconda3LLMFF\Scripts\activate.bat
+   conda activate ia-env
+   cd stable-diffusion-webui
+   .\webui.bat --api --no-half-vae --no-half --nowebui --port=5555
+   ```
 
-> vous gardez ce terminal ouvert durant toute l'utilisation du projet
+   > Vous gardez ce terminal ouvert durant toute l'utilisation du projet
 
 2. Lancer un script d'un projet qui utilise ai_prompt_lib
    Ouvrez powershell et lancez les commandes suivantes (depuis la racine du dépot):
 
-```shell
-.venv/Scripts/activate.bat
-python test.py
-```
+   ```shell
+   .venv/Scripts/activate.bat
+   python test.py
+   ```
 
-> Si vous souhaitez lancer votre propre script ils suffit de remplacer `test.py` par le nom de votre script
+   > Si vous souhaitez lancer votre propre script ils suffit de remplacer `test.py` par le nom de votre script
 
 ## Exemple d'utilisation
 
