@@ -79,16 +79,29 @@ Suivez les étapes ci-dessous pour installer le projet:
 
 Pour lancer le projet, utilisez la commande suivante:
 
-1. Placez-vous à la racine du dépôt.
-2. Effectuez les commandes suivantes, une par une:
+1. Lancer le serveur stable diffusion
 
-```
+Allez à la racine du dépot dans un terminal et lancez les commandes suivantes:
+
+```shell
 cmd.exe
- %UserProfile%\Miniconda3\Scripts\activate.bat
+%UserProfile%\Miniconda3LLMFF\Scripts\activate.bat
 conda activate ia-env
 cd stable-diffusion-webui
 .\webui.bat --api --no-half-vae --no-half --nowebui --port=5555
 ```
+
+> vous gardez ce terminal ouvert durant toute l'utilisation du projet
+
+2. Lancer un script d'un projet qui utilise ai_prompt_lib
+   Ouvrez powershell et lancez les commandes suivantes (depuis la racine du dépot):
+
+```shell
+.venv/Scripts/activate.bat
+python test.py
+```
+
+> Si vous souhaitez lancer votre propre script ils suffit de remplacer `test.py` par le nom de votre script
 
 ## Exemple d'utilisation
 
