@@ -1,0 +1,105 @@
+LLAMA 2 & CREATIVEML OPEN RAIL-M DUAL LICENSE AGREEMENT
+
+LLAMA 2 Community License Agreement
+
+Llama 2 Version Release Date: July 18, 2023
+
+Agreement
+
+This agreement ("Agreement") outlines the terms and conditions for the use, reproduction, distribution, and modification of the Llama Materials. By clicking "I Accept" or using/distributing any part of the Llama Materials, you agree to be bound by this Agreement.
+
+Definitions:
+
+- "Agreement" refers to the terms and conditions herein.
+- "Documentation" means specifications, manuals, and accompanying materials from ai.meta.com/resources/models-and-libraries/llama-downloads/.
+- "Licensee" or "you" refers to the user or the entity entering into this Agreement.
+- "Llama 2" includes large language models, software, and algorithms from ai.meta.com/resources/models-and-libraries/llama-downloads/.
+- "Llama Materials" includes Meta's proprietary Llama 2 and Documentation.
+- "Meta" or "we" refers to Meta Platforms Ireland Limited (for EEA or Switzerland) and Meta Platforms, Inc. (outside EEA or Switzerland).
+
+1. License Rights and Redistribution:
+
+a. Grant of Rights: Licensee has a non-exclusive, worldwide, non-transferable, royalty-free license to use, reproduce, distribute, and modify Llama Materials.
+
+b. Redistribution and Use: 
+   i. Licensee distributing Llama Materials must provide a copy of this Agreement to third parties.
+   ii. If received from a Licensee in an end user product, Section 2 does not apply.
+   iii. Licensee must retain attribution notice in all distributed copies.
+   iv. Usage must comply with laws, regulations, and the Acceptable Use Policy.
+
+2. Additional Commercial Terms:
+If monthly active users exceed 700 million, Licensee must request a license from Meta. Meta may grant rights at its discretion.
+
+3. Disclaimer of Warranty:
+Llama Materials are provided "as is," without warranties. Licensee assumes all risks.
+
+4. Limitation of Liability:
+Meta and affiliates are not liable for lost profits or damages arising from this Agreement.
+
+5. Intellectual Property:
+a. No trademark licenses are granted. Neither party can use the other's name or mark.
+b. Licensee owns derivatives and modifications.
+
+6. Term and Termination:
+This Agreement is effective upon acceptance and terminates if breached. Sections 3, 4, and 7 survive termination.
+
+7. Governing Law and Jurisdiction:
+This Agreement is governed by California law, with exclusive jurisdiction in California courts.
+
+CreativeML Open RAIL-M License Agreement
+
+dated August 22, 2022
+
+Section I: PREAMBLE
+
+This license aims to balance open and responsible use of multimodal generative models, encouraging research while imposing use-based restrictions. Derivatives must maintain these restrictions.
+
+NOW THEREFORE, You and Licensor agree as follows:
+
+1. Definitions:
+Definitions include License, Data, Output, Model, Derivatives, Complementary Material, Distribution, Licensor, You, Third Parties, Contribution, and Contributor.
+
+Section II: INTELLECTUAL PROPERTY RIGHTS
+
+2. Grant of Copyright License:
+Contributors grant a perpetual, worldwide, non-exclusive, royalty-free copyright license for Complementary Material, Model, and Derivatives.
+
+3. Grant of Patent License:
+Contributors grant a patent license for Model and Complementary Material.
+
+Section III: CONDITIONS OF USAGE, DISTRIBUTION AND REDISTRIBUTION
+
+4. Distribution and Redistribution:
+Licensee may host, reproduce, and distribute Models with conditions. Use-based restrictions are enforceable. Copyright, patent, and attribution notices must be retained.
+
+5. Use-based restrictions:
+Attachment A outlines use restrictions. Licensee cannot use Models for specified restricted uses.
+
+6. The Output You Generate:
+Licensor claims no rights in the Output. Licensee is responsible for Output and its uses.
+
+Section IV: OTHER PROVISIONS
+
+7. Updates and Runtime Restrictions:
+Licensor may restrict usage, update the Model, or modify the Output. Licensee must use the latest version.
+
+8. Trademarks and related:
+No use of Licensor's trademarks. Reserved rights.
+
+9. Disclaimer of Warranty:
+Provided "AS IS" without warranties. Licensee assumes risks.
+
+10. Limitation of Liability:
+Contributors are not liable for damages, except as required by law.
+
+11. Accepting Warranty or Additional Liability:
+Licensee may offer support, warranty, or liability, acting only on their behalf.
+
+12. Severability:
+If any provision is invalid, remaining provisions remain valid.
+
+END OF TERMS AND CONDITIONS
+
+Attachment A: Use Restrictions
+
+Licensee agrees not to use Models or Derivatives for specified restricted uses outlined in Attachment A.
