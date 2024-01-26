@@ -138,12 +138,14 @@ Pour lancer le projet, utilisez la commande suivante:
 
    > Si vous souhaitez lancer votre propre script ils suffit de remplacer `test.py` par le nom de votre script
 
-## Exemple d'utilisation
+## Exemple de génération d'histoire
 
-Voici un exemple d'utilisation basique du projet:
+Pour voir des exemples de génération d'histoire, vous pouvez regarder le dossier `examples` qui contient des reusltats de génération d'histoire.
 
 ## Documentation
+
 Pour générer la documentation:
+
 ```
 doxygen Doxyfile
 ```
