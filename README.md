@@ -124,7 +124,9 @@ Pour lancer le projet, utilisez la commande suivante:
    .\webui.bat --api --no-half-vae --no-half --nowebui --port=5555
    ```
 
-   > Vous gardez ce terminal ouvert durant toute l'utilisation du projet
+   Vous gardez ce terminal ouvert durant toute l'utilisation du projet
+
+   > ATTENTION, si vous n'avez pas de carte graphique ou que votre carte graphique n'est pas compatible avec CUDA, vous devez remplacer `--skip-torch-cuda-test`
 
 2. Lancer un script d'un projet qui utilise ai_prompt_lib
    Ouvrez un terminal (cmd ou powershell) et lancez les commandes suivantes (depuis la racine du dépot):
