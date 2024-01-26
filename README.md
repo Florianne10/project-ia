@@ -98,8 +98,6 @@ Suivez les étapes ci-dessous pour installer le projet:
 
    ```python
    prompt = StableDiffusion("Tintin at the beach", loras={"Tintin": 1, "Tintin_v1": 1})
-
-   lora = Lora("nom_du_lora")
    ```
 
    > Les clés du dictionnaire sont les noms des loras et les valeurs sont les poids des loras

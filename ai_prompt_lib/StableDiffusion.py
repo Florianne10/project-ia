@@ -12,11 +12,12 @@ LOCAL_STABLE_DIFFUSION_URL = "http://127.0.0.1:" + str(port)
 
 class StableDiffusion:
     """!A class for generating responses from StableDiffusion."""
-    def __init__(self, prompt:str, quality : int = 20, loras : dict[str, float] = {}) -> None:
+    def __init__(self, prompt:str, quality : int = 20, negative_prompt : str = "", loras : dict[str, float] = {}) -> None:
         """The constructor for StableDiffusion class.
         Parameters:
             prompt (str): The prompt to generate a response from.
             quality (int): The quality of the generation.
+            negative_prompt (str): The negative prompt to use.
             loras (dict[str, float]): The loras to use.
         Returns:
             None
@@ -26,6 +27,8 @@ class StableDiffusion:
         self.prompt = prompt + loras_str
 
         self.quality = quality
+
+        self.negative_prompt = negative_prompt
 
         self.started = False
 
@@ -61,6 +64,7 @@ class StableDiffusion:
 
         payload = {
             "prompt": self.prompt,
+            "negative_prompt": self.negative_prompt,
             "steps": self.quality,
             "sampler_index": "Euler a"
         }

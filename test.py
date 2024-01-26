@@ -1,17 +1,39 @@
 
 from ai_prompt_lib.StableDiffusion import StableDiffusion
 from ai_prompt_lib.Llama2 import Llama2
-import time
 
 import asyncio
 
 
-print("Loading models...")
-# Llama2.set_model("./mistral-7b-v0.1.Q2_K.gguf")
+# /// GET USER INPUTS
+topic = input("Enter a Story topic (In ENGLISH): ")
 
+print("__PARAMETERS FOR PICTURE GENERATION__")
 
-topic = input("Enter a Story topic: ")
+negativePrompt = input("Enter a negative prompt (In ENGLISH, press enter to skip): ").strip()
 
+style = input("Enter a style (Concept art, Cyberpunk, Cartoon, Horror) or press enter to skip: ").strip()
+
+loras = {}
+
+while True:
+    lora = input("Enter a lora name (press enter if you don't want to add more loras): ").strip()
+    if (lora == ""):
+        break
+    
+    while True:
+        try:
+            loraWeight = float(input("Enter a weight for this lora (0.0 to 1.0): ").strip())
+            if (loraWeight < 0.0 or loraWeight > 1.0):
+                raise ValueError
+            break
+        except ValueError:
+            print("Invalid weight. Try again.")
+    loras[lora] = loraWeight
+
+    print("Curent loras: " + str(loras))
+
+# /// GENERATE STORY
 print("Generating story...")
 
 promptStory = Llama2("Generate a SHORT story about \"" + topic + "\". Tell the story:")
@@ -19,16 +41,18 @@ promptStory = Llama2("Generate a SHORT story about \"" + topic + "\". Tell the s
 
 
 print("Generation done")
-print(promptStory.get_response())
+
+# /// GENERATE PICTURE PROMPT
 
 print("\n////Generation stable diffusion prompt...")
 
 stableDiffusionPrompt = Llama2("Write a short prompt to illustrate this story with a picture generation IA. Describe details of the story characters: " + promptStory.get_response() + "\n\nPrompt: ")
-# stableDiffusionPrompt = Llama2("Describe in details characters & landspace of this story: " + promptStory.get_response() + "\n\nPrompt: ")
 
 
 
 print("Generation done")
+
+# /// SAVE STORY
 
 story = "______Story______\n"  + promptStory.prompt + "\n" + promptStory.get_response()
 
@@ -38,9 +62,13 @@ with open("output.txt", "w") as text_file:
 
 Llama2.close_model()
 
+# /// GENERATE PICTURE
+
 async def generation():
     """!Generate a response from the model."""
-    prompt = StableDiffusion(stableDiffusionPrompt.get_response(), quality=20)#, loras={"Tintin": 1, "Tintin_v1": 1})
+    stableDiffusionPromptStr = (style != "" and "(" + style + " style)" or "") +stableDiffusionPrompt.get_response()
+    
+    prompt = StableDiffusion(stableDiffusionPromptStr, quality=20, negative_prompt=negativePrompt, loras=loras)#, loras={"Tintin": 1, "Tintin_v1": 1})
     
     print("Generating picture...")
 
